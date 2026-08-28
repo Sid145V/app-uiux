@@ -1932,10 +1932,10 @@ SM.register('home', () => {
         </div>
       </div>
 
-      <!-- Start Today's Check-in CTA Pill Button -->
+      <!-- Today's Check-in CTA Pill Button -->
       <div style="padding: 6px 20px 18px;">
         <button class="btn btn-primary w-full card-interactive" style="height: 54px; font-family:'Montserrat',sans-serif; font-size: 16.5px; font-weight: 700; border-radius: 27px; background: linear-gradient(145deg, #F7B6D2 0%, #F38DBE 20%, #EC5DAA 40%, #D93B9F 60%, #B14AC8 80%, #7A3FD1 100%); box-shadow: 0 8px 24px rgba(122,63,209,0.28); border: none; cursor: pointer; display: flex; align-items: center; justify-content: center; gap: 6px;" data-action="start-checkin">
-          <span>Start Today's Check-in</span>
+          <span>Today's Check-in</span>
           <span style="font-size: 17px;">✨</span>
         </button>
       </div>

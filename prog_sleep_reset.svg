@@ -1,0 +1,41 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="sleepBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#1E1B4B"/>
+      <stop offset="50%" stop-color="#3B0764"/>
+      <stop offset="100%" stop-color="#581C87"/>
+    </linearGradient>
+    <linearGradient id="moonGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#FEF08A"/>
+      <stop offset="100%" stop-color="#FDE047"/>
+    </linearGradient>
+    <linearGradient id="cloudGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#C084FC" stop-opacity="0.4"/>
+      <stop offset="100%" stop-color="#E9D5FF" stop-opacity="0.1"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="300" fill="url(#sleepBg)"/>
+  
+  <!-- Glowing Crescent Moon -->
+  <g transform="translate(420, 60)">
+    <path d="M 50 0 A 50 50 0 1 0 100 80 A 40 40 0 1 1 50 0 Z" fill="url(#moonGrad)"/>
+    <circle cx="50" cy="50" r="70" fill="#FEF08A" opacity="0.15"/>
+  </g>
+  
+  <!-- Stars -->
+  <circle cx="120" cy="60" r="3" fill="#FFFFFF" opacity="0.9"/>
+  <circle cx="240" cy="90" r="2.5" fill="#FEF08A" opacity="0.8"/>
+  <circle cx="320" cy="40" r="3.5" fill="#FFFFFF" opacity="0.95"/>
+  <circle cx="180" cy="140" r="2" fill="#E9D5FF" opacity="0.7"/>
+  <circle cx="520" cy="180" r="3" fill="#FFFFFF" opacity="0.85"/>
+  
+  <!-- Soft Sleep Clouds -->
+  <path d="M -20,220 C 50,180 120,230 200,200 C 280,170 350,220 440,190 C 520,160 580,210 640,190 L 640,300 L -20,300 Z" fill="url(#cloudGrad)"/>
+  <path d="M -20,250 C 80,220 180,260 280,230 C 380,200 480,240 620,210 L 620,300 L -20,300 Z" fill="#A855F7" opacity="0.25"/>
+
+  <!-- Text Label Badge Artwork -->
+  <g transform="translate(40, 50)">
+    <rect x="0" y="0" width="160" height="32" rx="16" fill="#FFFFFF" opacity="0.95"/>
+    <text x="80" y="21" font-family="sans-serif" font-size="13" font-weight="800" fill="#6B21A8" text-anchor="middle" letter-spacing="1">SLEEP RESET</text>
+  </g>
+</svg>

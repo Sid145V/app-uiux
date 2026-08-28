@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
+  <meta name="description" content="Miror Symptom Tracker — Your personal menopause wellness companion. Track symptoms, understand patterns, and get AI-powered insights.">
+  <meta name="theme-color" content="#FF6B9D">
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="default">
+  <title>Miror — Symptom Tracker</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Montserrat:wght@400;500;600;700;800;900&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Outfit:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css?v=20260826">
+</head>
+<body>
+  <div class="app-frame" id="app">
+    <!-- Status Bar -->
+    <div class="status-bar" id="statusBar">
+      <div class="status-bar-time" id="statusTime">9:41</div>
+      <div class="status-bar-icons">
+        <svg width="16" height="11" viewBox="0 0 16 11" fill="currentColor"><rect x="0" y="7" width="3" height="4" rx="0.5"/><rect x="4.5" y="4" width="3" height="7" rx="0.5"/><rect x="9" y="1" width="3" height="10" rx="0.5"/><rect x="13.5" y="0" width="2.5" height="11" rx="0.5"/></svg>
+        <svg width="15" height="11" viewBox="0 0 15 11" fill="currentColor"><path d="M7.5 2.2C9.8 2.2 11.9 3.1 13.3 4.7L15 3C13.1 1 10.5 0 7.5 0C4.5 0 1.9 1 0 3L1.7 4.7C3.1 3.1 5.2 2.2 7.5 2.2Z" opacity="0.3"/><path d="M7.5 5.3C9.1 5.3 10.5 5.9 11.5 7L13.2 5.3C11.8 3.8 9.8 3 7.5 3C5.2 3 3.2 3.8 1.8 5.3L3.5 7C4.5 5.9 5.9 5.3 7.5 5.3Z" opacity="0.6"/><path d="M7.5 8.4C8.4 8.4 9.2 8.8 9.8 9.4L11.5 7.7C10.5 6.7 9.1 6.1 7.5 6.1C5.9 6.1 4.5 6.7 3.5 7.7L5.2 9.4C5.8 8.8 6.6 8.4 7.5 8.4Z"/><circle cx="7.5" cy="10.5" r="1.2"/></svg>
+        <svg width="25" height="11" viewBox="0 0 25 11" fill="currentColor"><rect x="0" y="0" width="22" height="11" rx="2" stroke="currentColor" stroke-width="1" fill="none"/><rect x="1.5" y="1.5" width="17" height="8" rx="1"/><path d="M23 3.5v4a2 2 0 0 0 0-4z"/></svg>
+      </div>
+    </div>
+
+    <!-- Screen Container -->
+    <div class="screen-container" id="screenContainer"></div>
+
+    <!-- Confetti Container -->
+    <div class="confetti-container" id="confettiContainer"></div>
+
+    <!-- Community Floating Action Button (Create post) centered inside Mobile Frame -->
+    <button class="care-fab" id="care-fab-btn" onclick="window.handleCommunityFabClick()" aria-label="Create post" title="Create post" style="display:none;">
+      <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.8" stroke-linecap="round" stroke-linejoin="round">
+        <line x1="12" y1="5" x2="12" y2="19"></line>
+        <line x1="5" y1="12" x2="19" y2="12"></line>
+      </svg>
+      <span>Create post</span>
+    </button>
+
+    <!-- Bottom Navigation -->
+    <nav class="bottom-nav" id="bottomNav" role="navigation" aria-label="Main navigation">
+      <button class="nav-item active" data-action="switchTab" data-tab="home" id="nav-home" aria-label="Home">
+        <span class="nav-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path>
+            <polyline points="9 22 9 12 15 12 15 22"></polyline>
+          </svg>
+        </span>
+        <span class="nav-label">Home</span>
+      </button>
+      <button class="nav-item" data-action="switchTab" data-tab="community" id="nav-community" aria-label="Community">
+        <span class="nav-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+          </svg>
+        </span>
+        <span class="nav-label">Community</span>
+      </button>
+      <button class="nav-item" data-action="switchTab" data-tab="care-plus" id="nav-care-plus" aria-label="Care">
+        <span class="nav-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="M12 8v6"/>
+            <path d="M9 11h6"/>
+          </svg>
+        </span>
+        <span class="nav-label">Care</span>
+      </button>
+      <button class="nav-item" data-action="switchTab" data-tab="explore" id="nav-explore" aria-label="Meno Intel">
+        <span class="nav-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/><path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/><line x1="9" y1="7" x2="15" y2="7"/><line x1="9" y1="11" x2="15" y2="11"/>
+          </svg>
+        </span>
+        <span class="nav-label">Meno Intel</span>
+      </button>
+      <button class="nav-item" data-action="switchTab" data-tab="profile" id="nav-profile" aria-label="You">
+        <span class="nav-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2"/><circle cx="12" cy="7" r="4"/>
+          </svg>
+        </span>
+        <span class="nav-label">You</span>
+      </button>
+    </nav>
+  </div>
+
+  <meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate">
+  <script src="app.js?v=20260828_26000"></script>
+  <script src="screens.js?v=20260828_26000"></script>
+</body>
+</html>

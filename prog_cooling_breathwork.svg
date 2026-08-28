@@ -1,0 +1,34 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 600 300" width="100%" height="100%">
+  <defs>
+    <linearGradient id="coolBg" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EFF6FF"/>
+      <stop offset="50%" stop-color="#DBEAFE"/>
+      <stop offset="100%" stop-color="#F0FDF4"/>
+    </linearGradient>
+    <linearGradient id="blueGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#3B82F6"/>
+      <stop offset="100%" stop-color="#1D4ED8"/>
+    </linearGradient>
+  </defs>
+  <rect width="600" height="300" fill="url(#coolBg)"/>
+  
+  <!-- Cooling Vagus Breathwork Waves & Frost Crystal Rings -->
+  <g transform="translate(430, 130)">
+    <circle cx="0" cy="0" r="70" fill="#3B82F6" opacity="0.12"/>
+    <circle cx="0" cy="0" r="50" fill="#60A5FA" opacity="0.2"/>
+    
+    <!-- Snowflake / Cooling Rays -->
+    <path d="M 0,-35 L 0,35 M -35,0 L 35,0 M -25,-25 L 25,25 M -25,25 L 25,-25" stroke="#2563EB" stroke-width="3" stroke-linecap="round" opacity="0.7"/>
+  </g>
+
+  <!-- Cooling Breath Breeze Wave Paths -->
+  <path d="M 0,160 C 150,120 300,200 450,150 C 520,130 570,170 600,150" fill="none" stroke="#60A5FA" stroke-width="3" opacity="0.5"/>
+  <path d="M 0,190 C 120,160 260,220 400,170 C 500,140 560,190 600,170" fill="none" stroke="#3B82F6" stroke-width="2.5" opacity="0.4"/>
+  <path d="M 0,220 Q 200,180 400,240 T 600,200 L 600,300 L 0,300 Z" fill="#2563EB" opacity="0.12"/>
+
+  <!-- Text Label Badge Artwork -->
+  <g transform="translate(40, 50)">
+    <rect x="0" y="0" width="190" height="32" rx="16" fill="#FFFFFF" opacity="0.95"/>
+    <text x="95" y="21" font-family="sans-serif" font-size="13" font-weight="800" fill="#1D4ED8" text-anchor="middle" letter-spacing="1">COOLING BREATHWORK</text>
+  </g>
+</svg>
